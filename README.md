@@ -54,6 +54,6 @@ If you save a decent quality (ie. One that will scale down well) logo in /assets
 
 The starter kit does include a couple of scripts and scaffolds that I consider useful and have found common need for on projects so delete as necessary. They are:
 
-(https://github.com/WickyNilliams/headroom.js/)[headroom.js] for the disappearing top header bar
-(https://github.com/christophery/pushy)[Pushy] Off canvas navigation
-(https://github.com/csswizardry/csswizardry-grids)[CSS Wizardry Grids] for layout
+[https://github.com/WickyNilliams/headroom.js/](headroom.js) for the disappearing top header bar
+[https://github.com/christophery/pushy](Pushy) Off canvas navigation
+[https://github.com/csswizardry/csswizardry-grids](CSS Wizardry Grids) for layout
