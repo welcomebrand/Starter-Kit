@@ -1,0 +1,66 @@
+/*
+	If we use Google fonts, import it here. Don't include the http bit then it's safe across secure too
+	@import url(//fonts.googleapis.com/css?family=Paytone+One|Roboto:400,400italic,700,700italic,900,500italic,500);
+*/
+
+/* Font weights */
+$normal: 400;
+$bold: 700;
+
+/* REM Font sizing - http://blog.divshot.com/post/29552945105/useful-sass-mixins-for-responsive-design-font-sizing */
+// Use: @include font-size(1,1.5);
+@mixin font-size($size: 1, $line: $size * 1.5) {
+	font-size     : ($size * 16) + px;
+	line-height   : ($line * 16) + px;
+	font-size     : $size + rem;
+	line-height   : $line + rem;
+	}
+
+html {
+	font-size: 100%;
+	}
+
+body {
+	@include font-size(1, 1.5);
+	}
+
+h1, h2, h3, h4, h5, h6 {
+	@include font-size(1.5, 1.75);
+	}
+
+p {
+
+	}
+
+a {
+	@include hover-fade;
+
+	&:hover {
+
+		}
+	}
+
+strong,
+b {
+	font-weight: $bold;
+	}
+
+.small {
+	@include font-size(.75, 1.25);
+	}
+
+cite {
+
+	}
+
+pre, code {
+
+	}
+
+blockquote {
+
+	}
+
+	cite {
+
+		}
