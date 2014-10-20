@@ -167,8 +167,8 @@ module.exports = function(grunt) {
             'favicons',
             'svg2png',
             'imagemin',
-            'autoprefixer',
             'sass',
+            'autoprefixer',
             'watch'
         ]);
 
