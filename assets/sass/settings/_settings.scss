@@ -9,11 +9,6 @@ MIXINS & USEFUL TOOLS
 
 /* Hex to RGBA colour conversion - https://www.newmediadenver.com/blog/hexadecimal-rgba-conversion-sass */
 // Use: @include rgba-background($white,.5);
-/* @mixin rgba-background($hexcolor, $opacity) {
-    background-color: $hexcolor;
-    background-color: rgba($hexcolor, $opacity);
-    } */
-
 @mixin rgba-background($hexcolor, $opacity: 1) {
   @if $opacity == 1 {
     background-color: $hexcolor;
@@ -25,11 +20,6 @@ MIXINS & USEFUL TOOLS
 }
 
 // Use: @include rgba-color($white,.5);
-/* @mixin rgba-color($hexcolor, $opacity) {
-    color: $hexcolor;
-    color: rgba($hexcolor, $opacity);
-    } */
-
 @mixin rgba-color($hexcolor, $opacity: 1) {
   @if $opacity == 1 {
     color: $hexcolor;
@@ -65,12 +55,6 @@ $bp-xxlarge: 77.5em;
 @mixin bp-l { @media only screen and (min-width: $bp-large) { @content; } }
 @mixin bp-xl { @media only screen and (min-width: $bp-xlarge) { @content; } }
 @mixin bp-xxl { @media only screen and (min-width: $bp-xxlarge) { @content; } }
-
-/* Hover animation */
-// Use: @include hover-fade;
-@mixin hover-fade {
-	transition: all 0.3s ease 0s;
-	}
 
 /* Gradient */
 // Use: @include gradient(#f36,#f60);

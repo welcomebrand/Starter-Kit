@@ -8,3 +8,7 @@ body {
 	width: 100%;
 	@include rgba-background($orange, 0.5);
 	}
+
+.feature {
+	animation: fadein 2s;
+	}
