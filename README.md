@@ -13,7 +13,7 @@ It's Grunt powered so you need to install Node.js and Grunt [Here are the gettin
 
 ##Getting set up in your working directory / theme folder
 
-You will need to install the various Grunt tasks we use so in terminal navigate to the project directory, and run `npm install`:
+You will need to install the various Grunt tasks we use so in terminal cd to the project directory, and run `npm install`:
 
 ###The basic tasks it performs are:
 
@@ -45,6 +45,10 @@ Sass so just add un-prefixed properties and if they're needed it's taken care of
 **SVG fallbacks to PNG**
 
 If you create any SVG assets for the project - icons etc, save them to /assets/images/svg/ and Grunt will generate a PNG version of the same size to use as a fallback in your CSS.
+
+**Autoprefixing CSS**
+
+When Grunt is run, it runs through the main stylesheet/s and checks on whether selectors need vendor prefixing so write un-prefixed css and run grunt.
 
 **Favicon generation**
 
