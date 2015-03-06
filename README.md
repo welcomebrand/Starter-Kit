@@ -60,4 +60,4 @@ The starter kit does include a couple of scripts and scaffolds that I consider u
 
 [https://github.com/WickyNilliams/headroom.js/](headroom.js) for the disappearing top header bar
 [https://github.com/christophery/pushy](Pushy) Off canvas navigation
-[https://github.com/csswizardry/csswizardry-grids](CSS Wizardry Grids) for layout
+[http://cferdinandi.github.io/kraken/grid.html](Kraken Grids) for layout
