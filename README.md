@@ -54,6 +54,14 @@ When Grunt is run, it runs through the main stylesheet/s and checks on whether s
 
 If you save a decent quality (ie. One that will scale down well) logo in /assets/images/ and call it favicon.png Grunt will generate Apple and Windows favicons for use and save them out with the relevant file names in the root directory of the site.
 
+##Grunt Tasks
+
+There's a couple of simple tasks to save you running everything each time. They are:
+
++ grunt - Just compiles, autoprefixes and watches your sass
++ grunt build - Compiles your sass, concatenates all your JS into a production file and builds Modernizr
++ grunt assets - Generate favicons, image optimisation and run svg2png conversion
+
 **Some useful design scripts**
 
 The starter kit does include a couple of scripts and scaffolds that I consider useful and have found common need for on projects so delete as necessary. They are:
