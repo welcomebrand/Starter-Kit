@@ -176,8 +176,8 @@ module.exports = function(grunt) {
             'autoprefixer'
         ]);
 
-    // Run: grunt optimise
-    grunt.registerTask('optimise',
+    // Run: grunt assets
+    grunt.registerTask('assets',
         [
             'uglify',
             'favicons',
