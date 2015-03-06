@@ -158,18 +158,30 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-perfbudget');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    // Where we tell Grunt what to do when we type "grunt" into the terminal (register them in the order we want them to run).
+    // Run: grunt
     grunt.registerTask('default',
         [
-            'concat',
-            'modernizr',
-            'uglify',
-            'favicons',
-            'svg2png',
-            'imagemin',
             'sass',
             'autoprefixer',
             'watch'
         ]);
 
+    // Run: grunt build
+    grunt.registerTask('build',
+        [
+            'concat',
+            'modernizr',
+            'uglify',
+            'sass',
+            'autoprefixer'
+        ]);
+
+    // Run: grunt optimise
+    grunt.registerTask('optimise',
+        [
+            'uglify',
+            'favicons',
+            'svg2png',
+            'imagemin',
+        ]);
 };
