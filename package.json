@@ -10,7 +10,6 @@
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-favicons": "^0.6.4",
-    "grunt-modernizr": "^0.5.2",
-    "grunt-perfbudget": "^0.1.5"
+    "grunt-modernizr": "^0.5.2"
   }
 }

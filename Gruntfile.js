@@ -112,20 +112,6 @@ module.exports = function(grunt) {
         }
         ,
 
-        // Run PerfBudget checker over the site
-        perfbudget: {
-          default: {
-            options: {
-              url: 'PUBLIC SITE URL',
-              key: 'db8137cdafb84d36b02778d325a9d5ff',
-              budget: {
-                SpeedIndex: '1500'
-              }
-            }
-          }
-        }
-        ,
-
         // Monitor these files for any changes
         watch: {
             scripts: {
@@ -155,7 +141,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-perfbudget');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Run: grunt
