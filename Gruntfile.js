@@ -156,7 +156,7 @@ module.exports = function(grunt) {
         [
             'concat',
             'modernizr',
-            'uglify',
+            //'uglify',
             'sass',
             'autoprefixer'
         ]);
