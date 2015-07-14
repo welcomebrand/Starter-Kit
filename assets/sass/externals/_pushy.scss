@@ -46,15 +46,18 @@
 } */
 
 .pushy--right {
+    -webkit-transform: translate3d(18.75em,0,0);
     transform: translate3d(18.75em,0,0);
     }
 
 .pushy--open {
+    -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     }
 
 .container--push,
 .push--push {
+    -webkit-transform: translate3d(0,0,0);
     transform: translate3d(0,0,0);
     }
 
