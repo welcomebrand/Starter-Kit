@@ -8,7 +8,8 @@ module.exports = function(grunt) {
         concat: {
             dist: {
                 src: [
-                    'assets/js/app/*.js'//, // All JS within app folder
+                    'assets/js/app/*.js', // All JS within app folder (Our JS)
+                     'assets/js/libs/*.js'  // JS within libs folder (External scripts we've downloaded)
                     // 'assets/js/global.js'  // If we need to isolate specific file, do that here
                 ],
                 dest: 'assets/js/build/production.js',
