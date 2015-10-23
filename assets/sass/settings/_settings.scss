@@ -1,34 +1,32 @@
 /*
 
-==========================================
 MIXINS & USEFUL TOOLS
-==========================================
+=================
 
 */
 
-
 /* Hex to RGBA colour conversion - https://www.newmediadenver.com/blog/hexadecimal-rgba-conversion-sass */
-// Use: @include rgba-background($white,.5);
-@mixin rgba-background($hexcolor, $opacity: 1) {
-  @if $opacity == 1 {
-    background-color: $hexcolor;
-  }
-  @else {
-    background-color: $hexcolor;
-    background-color: rgba($hexcolor, $opacity);
-  }
-}
+// Use: @include bg($white,.5);
+@mixin bg($hexcolor, $opacity: 1) {
+    @if $opacity == 1 {
+        background-color: $hexcolor;
+        }
+    @else {
+        background-color: $hexcolor;
+        background-color: rgba($hexcolor, $opacity);
+        }
+    }
 
-// Use: @include rgba-color($white,.5);
-@mixin rgba-color($hexcolor, $opacity: 1) {
-  @if $opacity == 1 {
-    color: $hexcolor;
-  }
-  @else {
-    color: $hexcolor;
-    color: rgba($hexcolor, $opacity);
-  }
-}
+// Use: @include color($white,.5);
+@mixin color($hexcolor, $opacity: 1) {
+    @if $opacity == 1 {
+        color: $hexcolor;
+        }
+    @else {
+        color: $hexcolor;
+        color: rgba($hexcolor, $opacity);
+        }
+    }
 /* Define Media Queries - http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
 
 /*
@@ -108,6 +106,7 @@ $bp-xxlarge: 77.5em;
     position: absolute;
     }
 
+
 /* Visually hide text in an element */
 // Use: @include hide-text;
 @mixin hide-text {
@@ -125,7 +124,6 @@ $bp-xxlarge: 77.5em;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     }
-
 
 /* Image floats */
 // Use: @extend %floatleft
@@ -147,23 +145,3 @@ $bp-xxlarge: 77.5em;
         display: inline;
         }
     }
-
-// Swap 1x for 2x images on retina https://coderwall.com/p/7pqh6q
-// Use: @include retina-image(home, logo, png, 143px, 40px);
-@mixin retina-image($context, $file, $type, $width, $height) {
-    background-image: url((asset-path($context + '/' + $file + '.' + $type)));
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),
-        only screen and (-moz-min-device-pixel-ratio: 2),
-        only screen and (-o-min-device-pixel-ratio: 2/1),
-        only screen and (min-device-pixel-ratio: 2),
-        only screen and (min-resolution: 192dpi),
-        only screen and (min-resolution: 2dppx){
-        & {
-          background-image: url((asset-path($context + '/' + $file + '@2x.' + $type)));
-          -webkit-background-size: $width $height;
-          -moz-background-size: $width $height;
-          -o-background-size: $width $height;
-          background-size: $width $height;
-    }
-  }
-}
