@@ -4,26 +4,27 @@
 
 It's assumed you've already got Ruby and Sass installed. If you haven't, get them installed first along with:
 
-* Node.js and Grunt (see above)
+* Node.js and Grunt
 * [Imagemagick](http://www.imagemagick.org/script/install-source.php)
 
-##It's now Grunt powered
+##Grunt task based
 
 It's Grunt powered so you need to install Node.js and Grunt [Here are the getting started instructions](http://gruntjs.com/getting-started) or [some other install instructions](http://24ways.org/2013/grunt-is-not-weird-and-hard/).
 
 ##Getting set up in your working directory / theme folder
 
-You will need to install the various Grunt tasks we use so in terminal cd to the project directory, and run `npm install`:
+You will need to install the various Grunt tasks we use so in terminal/command line - cd to the project directory, and run `npm install`:
 
 ###The basic tasks it performs are:
 
 **Minifies JS and then concatenates all the files into a single file**
 
-If you need to add new JS files to the project, simply drop them into /js/app/ and Grunt does the rest.
+Adding JS to your project is as simple as dropping your files into one of the relevant folders in /assets/js/. 
 
-You don't need to reference them in the HTML, Grunt will run the task and compile them all into production.js
+/app/ is for widgets, components or general scripts you write.
+/libs/ is for libraries for example jQuery or Modernizr.
 
-For the time being, files in /js/libs/ need referencing in HTML and are not processed in Grunt.
+You don't need to reference them in the HTML, Grunt will compile them all into a single production.js file that goes into /build/. That file is then also minified. 
 
 **Image optimisation**
 
@@ -50,10 +51,6 @@ If you create any SVG assets for the project - icons etc, save them to /assets/i
 
 When Grunt is run, it runs through the main stylesheet/s and checks on whether selectors need vendor prefixing so write un-prefixed css and run grunt.
 
-**Favicon generation**
-
-If you save a decent quality (ie. One that will scale down well) logo in /assets/images/ and call it favicon.png Grunt will generate Apple and Windows favicons for use and save them out with the relevant file names in the root directory of the site.
-
 ##Grunt Tasks
 
 There's a couple of simple tasks to save you running everything each time. They are:
@@ -62,10 +59,9 @@ There's a couple of simple tasks to save you running everything each time. They 
 + grunt build - Compiles your sass, concatenates all your JS into a production file and builds Modernizr
 + grunt assets - Generate favicons, image optimisation and run svg2png conversion
 
-**Some useful design scripts**
+##Some useful design scripts
 
 The starter kit does include a couple of scripts and scaffolds that I consider useful and have found common need for on projects so delete as necessary. They are:
 
-[https://github.com/WickyNilliams/headroom.js/](headroom.js) for the disappearing top header bar
-[https://github.com/christophery/pushy](Pushy) Off canvas navigation
-[http://cferdinandi.github.io/kraken/grid.html](Kraken Grids) for layout
++ [https://github.com/WickyNilliams/headroom.js/](headroom.js) for the disappearing top header bar
++ [https://github.com/christophery/pushy](Pushy) Off canvas navigation
