@@ -1,14 +1,19 @@
+/*
+
+	SITEWIDE LAYOUT
+	============
+
+	Overall layout styles
+
+*/
+
 // First we import Grid stuff, you shouldn't need to edit the grid.scss file
-@import	"grid";
+@import "grid";
 
 // Any other layout styles can go below
 body {
 	padding: 0;
 	margin: 0 auto;
 	width: 100%;
-	@include rgba-background($orange, 0.5);
-	}
-
-.feature {
-	animation: fadein 2s;
+	@include bg($orange, 0.5);
 	}

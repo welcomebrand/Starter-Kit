@@ -1,8 +1,18 @@
+/*
+
+	STRUCTURE
+	========
+
+	The main file, this compiles all the imported modules below into /assets/css/screen.css
+
+*/
+
 @import
 	// "settings/debug",
 
 	"settings/reset",
 	"settings/animation",
+	"settings/palette",
 	"settings/settings",
 	"settings/variables",
 	"settings/misc",

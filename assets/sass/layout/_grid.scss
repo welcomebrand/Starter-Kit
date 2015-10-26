@@ -1,4 +1,11 @@
-// Grid is modified version of Kraken from http://kraken.io
+/*
+
+	GRID
+	====
+
+	The grid is slightly tweaked version of Kraken from http://kraken.io	
+
+*/
 
 // Layout & Grid Variables
 $container-max: 80em;
@@ -10,128 +17,125 @@ $grid-padding: 1.5rem;
 
 // use: .grid-third or .grid-three-fourths etc
 $grid-sizes: ( // name: width
-    ten: 10%,
-    twenty: 20%,
-    thirty: 30%,
-    fourty: 40%,
-    fifty: 50%,
-    sixty: 60%,
-    seventy: 70%,
-    eighty: 80%,
-    ninety: 90%,
-    sixth: 16.6666666667%,
-    quarter: 25%,
-    third: 33.33333333333%,
-    two-thirds: 66.666666666667%,
-    three-quarters: 75%,
-    full: 100%
-    );
+	ten: 10%,
+	twenty: 20%,
+	thirty: 30%,
+	fourty: 40%,
+	fifty: 50%,
+	sixty: 60%,
+	seventy: 70%,
+	eighty: 80%,
+	ninety: 90%,
+	sixth: 16.6666666667%,
+	quarter: 25%,
+	third: 33.33333333333%,
+	two-thirds: 66.666666666667%,
+	three-quarters: 75%,
+	full: 100%
+	);
 
 $grid-breakpoints: ( // breakpoint, prefix, include offsets (boolean)
-    ($bp-xsmall, ".row-start-xsmall", false),
-    ($bp-small, ".row-start-small", false),
-    ($bp-medium, ".row-start-medium", false),
-    ($bp-large, ".row-start-large", false),
-    ($bp-xlarge, ".row-start-xlarge", false),
-    ($bp-xxlarge, null, true)
-    );
+	($bp-xsmall, ".row-start-xsmall", false),
+	($bp-small, ".row-start-small", false),
+	($bp-medium, ".row-start-medium", false),
+	($bp-large, ".row-start-large", false),
+	($bp-xlarge, ".row-start-xlarge", false),
+	($bp-xxlarge, null, true)
+	);
 
 %grid-base {
-    float: left;
-    width: 100%;
-    padding-left: $grid-margins;
-    padding-right: $grid-margins;
-    @extend %clearfix;
-    }
+	float: left;
+	width: 100%;
+	padding-left: $grid-margins;
+	padding-right: $grid-margins;
+	@extend %clearfix;
+	}
 
 @each $grid, $width in ($grid-sizes) {
-    //.grid-#{$grid} {
-    .grid-#{$grid} {
-        @extend %grid-base;
-        }
-    }
+	//.grid-#{$grid} {
+	.grid-#{$grid} {
+		@extend %grid-base;
+		}
+	}
 
 /**
  * Add columns to grid on bigger screens
  */
-@each $breakpoint, $prefix, $offset in ($grid-breakpoints){
-    @media (min-width: $breakpoint) {
-        @each $grid, $width in ($grid-sizes) {
-        #{$prefix} .grid-#{$grid} {
-            width: $width;
-            }
-        }
-            @if $offset {
-            @each $grid, $width in ($grid-sizes) {
-                #{$prefix} .offset-#{$grid} {
-                    margin-left: $width;
-                    }
-                }
-            }
-        }
-    }
+@each $breakpoint, $prefix, $offset in ($grid-breakpoints) {
+		@media (min-width: $breakpoint) {
+			@each $grid, $width in ($grid-sizes) {
+				#{$prefix} .grid-#{$grid} {
+				width: $width;
+				}
+			}
+		@if $offset {
+			@each $grid, $width in ($grid-sizes) {
+				#{$prefix} .offset-#{$grid} {
+					margin-left: $width;
+					}
+				}
+			}
+		}
+	}
 
 // The Grid
 .container {
-    width: $container-width;
-    max-width: $container-max;
-    margin-left: auto;
-    margin-right: auto;
-    @extend %clearfix;
-    &--small {
-        max-width: $container-max/2;
-        }
-    &--mid {
-            max-width: $container-max/1.25;
-            }
-    &--full {
-        max-width: 100%;
-            }
-    }
+	width: $container-width;
+	max-width: $container-max;
+	margin-left: auto;
+	margin-right: auto;
+	@extend %clearfix;
+	&--small {
+		max-width: $container-max/2;
+		}
+	&--mid {
+		max-width: $container-max/1.25;
+		}
+	&--full {
+		max-width: 100%;
+		}
+	}
 
 //.row,
 .row {
-    margin-left: $grid-margins * -1;
-    margin-right: $grid-margins * -1;
-    @extend %clearfix;
-    }
+	margin-left: $grid-margins * -1;
+	margin-right: $grid-margins * -1;
+	@extend %clearfix;
+	}
 
 .grid-item {
-    @extend %clearfix;
-    }
+	@extend %clearfix;
+	}
 
 .grid-item-content {
-    padding: $grid-padding;
-    header & {
-        padding: 0 $grid-padding;
-        }
-    }
+	padding: $grid-padding;
+	}
 
 .no-pad {
-    padding: 0;
-    &--top {
-        padding-top: 0;
-        }
-    &--right {
-        padding-right: 0;
-        }
-    &--bottom {
-        padding-bottom: 0;
-        }
-    &--left {
-        padding-left: 0;
-        }
-    }
+	padding: 0;
+	&--top {
+		padding-top: 0;
+		}
+	&--right {
+		padding-right: 0;
+		}
+	&--bottom {
+		padding-bottom: 0;
+		}
+	&--left {
+		padding-left: 0;
+		}
+	}
 
 // Grid position options
 // Reverse order
 .grid-flip {
-    float: right;
-    }
+	float: right;
+	}
 
 // Align to center
 .float-center {
-    float: none;
-    margin-left: auto;
-    margin-right: auto;
-    }
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	}

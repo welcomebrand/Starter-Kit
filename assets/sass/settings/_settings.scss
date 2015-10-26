@@ -5,29 +5,31 @@ MIXINS & USEFUL TOOLS
 
 */
 
-/* Hex to RGBA colour conversion - https://www.newmediadenver.com/blog/hexadecimal-rgba-conversion-sass */
+// Hex to RGBA colour conversion - https://www.newmediadenver.com/blog/hexadecimal-rgba-conversion-sass
 // Use: @include bg($white,.5);
 @mixin bg($hexcolor, $opacity: 1) {
-    @if $opacity == 1 {
-        background-color: $hexcolor;
-        }
-    @else {
-        background-color: $hexcolor;
-        background-color: rgba($hexcolor, $opacity);
-        }
-    }
+		@if $opacity == 1 {
+		background-color: $hexcolor;
+		}
+	@else {
+		background-color: $hexcolor;
+		background-color: rgba($hexcolor, $opacity);
+		}
+	}
 
 // Use: @include color($white,.5);
 @mixin color($hexcolor, $opacity: 1) {
-    @if $opacity == 1 {
-        color: $hexcolor;
-        }
-    @else {
-        color: $hexcolor;
-        color: rgba($hexcolor, $opacity);
-        }
-    }
-/* Define Media Queries - http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+	@if $opacity == 1 {
+		color: $hexcolor;
+		}
+	@else {
+		color: $hexcolor;
+		color: rgba($hexcolor, $opacity);
+		}
+	}
+
+
+// Define Media Queries - http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox
 
 /*
 Sizes based on 16px body font (these are just some arbitrary sizes, calculate your own)
@@ -54,60 +56,36 @@ $bp-xxlarge: 77.5em;
 @mixin bp-xl { @media only screen and (min-width: $bp-xlarge) { @content; } }
 @mixin bp-xxl { @media only screen and (min-width: $bp-xxlarge) { @content; } }
 
-/* Gradient */
-// Use: @include gradient(#f36,#f60);
-@mixin gradient($from, $to) {
-    background:         -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-    background:         -moz-linear-gradient(top,  $from, $to);
-    background-image:   -ms-linear-gradient(top, $from, $to);
-    background-image:   -o-linear-gradient(top, $from, $to);
-    -ms-filter:         "progid:DXImageTransform.Microsoft.gradient(startColorStr='$from', EndColorStr='$to')";
-    filter:             progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
-    }
 
-/* Horizontal Gradient http://bl.ocks.org/oncletom/5860036 */
-// Use: @include horizontal-gradient(#f60, #036);
-@mixin horizontal-gradient($from, $to, $stop: 100%) {
-    background-color: $from;
-    background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
-    background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
-    background-image: -o-linear-gradient(left, $from 0%, $to $stop);
-    background: -ms-linear-gradient(left, $from 0%, $to $stop);
-    background: linear-gradient(to right, $from 0%, $to $stop);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
-    }
-
-/* Clearfix http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+// Clearfix - http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox
 // Use: @extend %clearfix;
 %clearfix {
-    *zoom: 1;
-    &:before {
-        content: " ";
-        display: table;
-        }
-    &:after {
-        content: " ";
-        display: table;
-        clear: both;
-        }
-    }
+	*zoom: 1;
+	&:before {
+		content: " ";
+		display: table;
+		}
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+		}
+	}
 
-/* Visually hide element http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/ */
+// Visually hide element - http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox
 // Use: @extend %visuallyhidden;
 %visuallyhidden {
-    margin: -1px;
-    padding: 0;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip: rect(0, 0, 0, 0);
-    position: absolute;
-    }
+	margin: -1px;
+	padding: 0;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	clip: rect(0, 0, 0, 0);
+	position: absolute;
+	}
 
-
-/* Visually hide text in an element */
+// Visually hide text in an element
 // Use: @include hide-text;
 @mixin hide-text {
     overflow: hidden;
@@ -115,33 +93,33 @@ $bp-xxlarge: 77.5em;
     display: block;
     }
 
-/* Vertically align something http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ */
-// Use: @include vertical-align (NOTE: Height needs to be explicitly set on parent element)
+// Vertically align something http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css
+// Use: @include vertical-align (NOTE: Height needs to be explicitly set on parent element (can be 100%))
 @mixin vertical-align {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    }
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	}
 
-/* Image floats */
+// Image floats
 // Use: @extend %floatleft
 %floatleft {
-    display: block;
-    margin: 0 1em 1em 0;
-    @include bp-m {
-        float: left;
-        display: inline;
-        }
-    }
+	display: block;
+	margin: 0 1em 1em 0;
+	@include bp-m {
+		float: left;
+		display: inline;
+		}
+	}
 
 // Use: @extend %floatright
 %floatright {
-    display: block;
-    margin: 0 0 1em 1em;
-    @include bp-m {
-        float: right;
-        display: inline;
-        }
-    }
+	display: block;
+	margin: 0 0 1em 1em;
+	@include bp-m {
+		float: right;
+		display: inline;
+		}
+	}
