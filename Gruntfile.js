@@ -41,24 +41,6 @@ module.exports = function(grunt) {
         }
         ,
 
-        // Generate all required favicons from favicon.png file
-        favicons: {
-            options: {
-                trueColor: true,
-                precomposed: true,
-                appleTouchBackgroundColor: "#ffffff",
-                coast: true,
-                windowsTile: true,
-                tileBlackWhite: false,
-                tileColor: "auto"
-            },
-            icons: {
-                src: 'favicon.png',
-                dest: ''
-            }
-        }
-        ,
-
         // Create fallback PNG's from any SVG files
         svg2png: {
             all: {
@@ -137,8 +119,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks("grunt-modernizr");
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-favicons');
-    grunt.loadNpmTasks('grunt-svg2png');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-sass');
@@ -157,7 +137,7 @@ module.exports = function(grunt) {
         [
             'concat',
             'modernizr',
-            //'uglify',
+            'uglify',
             'sass',
             'autoprefixer'
         ]);
@@ -166,8 +146,6 @@ module.exports = function(grunt) {
     grunt.registerTask('assets',
         [
             'uglify',
-            'favicons',
-            'svg2png',
             'imagemin',
         ]);
 };
