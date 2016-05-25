@@ -4,6 +4,24 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+    // Update Grunt dependencies
+    devUpdate: {
+            main: {
+                options: {
+                    updateType: 'report', //just report outdated packages 
+                    reportUpdated: false, //don't report up-to-date packages 
+                    semver: true, //stay within semver when updating 
+                    packages: {
+                        devDependencies: true, //only check for devDependencies 
+                        dependencies: true
+                    },
+                    packageJson: null, //use matchdep default findup to locate package.json 
+                    reportOnlyPkgs: [] //use updateType action on all packages 
+                }
+            }
+        }
+        ,
+
         // Concatenate all scripts to one file
         concat: {
             dist: {
@@ -123,6 +141,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('grunt-dev-update');
 
     // Run: grunt
     grunt.registerTask('default',
@@ -147,5 +167,11 @@ module.exports = function(grunt) {
         [
             'uglify',
             'imagemin',
+        ]);
+
+    // Run: grunt devupdates
+    grunt.registerTask('devupdates',
+        [
+            'devUpdate'
         ]);
 };
